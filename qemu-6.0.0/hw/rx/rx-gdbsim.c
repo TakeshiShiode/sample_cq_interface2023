@@ -26,6 +26,7 @@
 #include "hw/sysbus.h"
 #include "hw/loader.h"
 #include "hw/rx/rx62n.h"
+#include "hw/rx/rx62t.h"
 #include "sysemu/sysemu.h"
 #include "sysemu/qtest.h"
 #include "sysemu/device_tree.h"
@@ -183,6 +184,16 @@ static void rx62n8_class_init(ObjectClass *oc, void *data)
     rxc->xtal_freq_hz = 12 * 1000 * 1000;
     mc->desc = "gdb simulator (R5F562N8 MCU and external RAM)";
 };
+
+//static void rx62taadfh_class_init(ObjectClass *oc, void *data)
+//{
+//    RxGdbSimMachineClass *rxc = RX_GDBSIM_MACHINE_CLASS(oc);
+//    MachineClass *mc = MACHINE_CLASS(oc);
+//
+//    rxc->mcu_name = TYPE_R5F562TADDFH_MCU;
+//    rxc->xtal_freq_hz = 100 * 1000 * 1000;
+//    mc->desc = "gdb simulator (R5F562TADDFH MCU(rx62t) and external RAM)";
+//};
 
 static const TypeInfo rx_gdbsim_types[] = {
     {

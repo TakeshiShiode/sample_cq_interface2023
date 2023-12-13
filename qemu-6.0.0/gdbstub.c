@@ -53,6 +53,9 @@
 #include "exec/exec-all.h"
 #include "sysemu/replay.h"
 
+
+#include "hw/timer/renesas_mtu34.h"
+
 #ifdef CONFIG_USER_ONLY
 #define GDB_ATTACHED "0"
 #else
@@ -1977,6 +1980,7 @@ static void handle_v_kill(GdbCmdContext *gdb_ctx, void *user_ctx)
 {
     /* Kill the target */
     put_packet("OK");
+    ReleaseMatBLDCCommemory();
     error_report("QEMU: Terminated via GDBstub");
     gdb_exit(0);
     exit(0);
@@ -2546,6 +2550,7 @@ static int gdb_handle_packet(const char *line_buf)
         break;
     case 'k':
         /* Kill the target */
+        ReleaseMatBLDCCommemory();
         error_report("QEMU: Terminated via GDBstub");
         gdb_exit(0);
         exit(0);

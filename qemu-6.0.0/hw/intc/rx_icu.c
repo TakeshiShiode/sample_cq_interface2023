@@ -32,6 +32,10 @@
 #include "hw/intc/rx_icu.h"
 #include "migration/vmstate.h"
 
+#include "qemu/timer.h"
+#include "hw/timer/renesas_mtu34.h"
+
+
 REG8(IR, 0)
   FIELD(IR, IR,  0, 1)
 REG8(DTCER, 0x100)
@@ -233,6 +237,10 @@ static void icu_write(void *opaque, hwaddr addr, uint64_t val, unsigned size)
     case A_IR ... A_IR + 0xff:
         if (icu->src[reg].sense != TRG_LEVEL && val == 0) {
             icu->ir[reg] = 0;
+            if(reg == 138){
+            	uint8_t *pMatComMemory = GetMatBLDCComMemory();
+            	*pMatComMemory = 0;
+            }
         }
         break;
     case A_DTCER ... A_DTCER + 0xff:

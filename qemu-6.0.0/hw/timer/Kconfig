@@ -54,3 +54,15 @@ config SSE_TIMER
 
 config AVR_TIMER16
     bool
+
+config RENESAS_MTU0
+    bool
+config RENESAS_MTU1
+    bool
+config RENESAS_MTU2
+    bool
+config RENESAS_MTU34
+    bool
+config RENESAS_KEYTEST
+    bool
+

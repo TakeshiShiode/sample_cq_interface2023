@@ -13,3 +13,13 @@ GTAGS
 *~
 *.ast_raw
 *.depend_raw
+arm-bin/
+rx-bin/
+*.cproject
+*.project
+*.xml
+/デフォルト/
+*.c#
+tprint_log.txt
+*.prefs
+*.bak

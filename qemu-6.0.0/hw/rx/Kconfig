@@ -8,3 +8,38 @@ config RX62N_MCU
 config RX_GDBSIM
     bool
     select RX62N_MCU
+
+config RX62T_MCU
+    bool
+    select RX_ICU
+    select RENESAS_TMR
+    select RENESAS_CMT
+    select RENESAS_SCI
+    select RENESAS_MTU0
+    select RENESAS_MTU1
+    select RENESAS_MTU2
+    select RENESAS_MTU34
+    select RENESAS_S12AD
+    select RENESAS_IOPORT
+    select RENESAS_KEYTEST
+
+config RX24T_MCU
+    bool
+    select RX_SYSTEM
+    select RX_ICU
+    select RENESAS_TMR
+    select RENESAS_CMT
+    select RENESAS_SCI
+    select RENESAS_MTU0
+    select RENESAS_MTU1
+    select RENESAS_MTU2
+    select RENESAS_MTU34
+    select RENESAS_S12AD
+    select RENESAS_IOPORT
+    select RENESAS_KEYTEST
+
+
+config RXT_GDBSIM
+    bool
+    select RX62T_MCU
+    select RX24T_MCU
