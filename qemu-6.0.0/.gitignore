@@ -13,8 +13,6 @@ GTAGS
 *~
 *.ast_raw
 *.depend_raw
-arm-bin/
-rx-bin/
 *.cproject
 *.project
 *.xml
