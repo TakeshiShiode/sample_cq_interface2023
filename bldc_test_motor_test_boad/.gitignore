@@ -1,0 +1,11 @@
+HardwareDebug/
+.settings/
+tags
+*.launch
+debug_vdc
+matlab_dll/.vs/
+matlab_dll/x64/Debug/dllmain.obj
+matlab_dll/x64/Debug/matlab_bldc.obj
+matlab_dll/x64/
+simulink/
+*.bak
