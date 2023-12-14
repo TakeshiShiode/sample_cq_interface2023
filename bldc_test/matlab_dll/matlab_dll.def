@@ -1,0 +1,11 @@
+LIBRARY matlab_dll
+
+EXPORTS
+		MatlabHandleInit	@1
+		MatlabReqInt_BLDC	@2
+
+		MatlabGetBLDC_PWM_U	@3
+		MatlabGetBLDC_PWM_V	@4
+		MatlabGetBLDC_PWM_W	@5
+		MatlabSetBLDCData	@6
+

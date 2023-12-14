@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MicomToolCommonProjectFile Version="1.00">
+  <CreatorType Name="e2studio" Version=""/>
+  <Placeholders>
+    <PlaceholderPrefix>${</PlaceholderPrefix>
+    <PlaceholderPostfix>}</PlaceholderPostfix>
+  </Placeholders>
+  <Project Name="bldc_test" Type="Application">
+    <Files>
+      <Category Name="generate">
+        <Path>generate\dbsct.c</Path>
+        <Path>generate\hwsetup.c</Path>
+        <Path>generate\intprg.c</Path>
+        <Path>generate\iodefine.h</Path>
+        <Path>generate\lowlvl.src</Path>
+        <Path>generate\lowsrc.c</Path>
+        <Path>generate\lowsrc.h</Path>
+        <Path>generate\resetprg.c</Path>
+        <Path>generate\sbrk.c</Path>
+        <Path>generate\sbrk.h</Path>
+        <Path>generate\stacksct.h</Path>
+        <Path>generate\typedefine.h</Path>
+        <Path>generate\vect.h</Path>
+        <Path>generate\vecttbl.c</Path>
+      </Category>
+      <Category Name="matlab_dll">
+        <Path>matlab_dll\dllmain.cpp</Path>
+        <Path>matlab_dll\framework.h</Path>
+        <Path>matlab_dll\matlab_bldc.cpp</Path>
+        <Path>matlab_dll\matlab_bldc.h</Path>
+        <Path>matlab_dll\matlab_dll.cpp</Path>
+        <Path>matlab_dll\matlab_dll.h</Path>
+        <Path>matlab_dll\pch.cpp</Path>
+        <Path>matlab_dll\pch.h</Path>
+        <Path>matlab_dll\resource.h</Path>
+        <Category Name="x64">
+          <Category Name="Debug">
+            <Path>matlab_dll\x64\Debug\matlab_dll.vcxproj.FileListAbsolute.txt</Path>
+          </Category>
+        </Category>
+      </Category>
+      <Category Name="simulink">
+        <Path>simulink\matlab_dll.h</Path>
+      </Category>
+      <Category Name="src">
+        <Path>src\bldc_test.c</Path>
+        <Path>src\bldc_test.h</Path>
+        <Path>src\cmt.c</Path>
+        <Path>src\cmt.h</Path>
+        <Path>src\mtu3.c</Path>
+        <Path>src\mtu3.h</Path>
+        <Path>src\port.c</Path>
+        <Path>src\port.h</Path>
+        <Path>src\safeguard.c</Path>
+        <Path>src\safeguard.h</Path>
+        <Path>src\sns.c</Path>
+        <Path>src\sns.h</Path>
+      </Category>
+    </Files>
+    <Device Category="com.renesas.cdt.managedbuild.renesas.ccrx.common.option.cpu.rx600" Series="RX">R5F562TADxFH</Device>
+    <BuildOptions Name="CC-RX" Version="v3.04.00">
+      <BuildMode Active="True" Name="HardwareDebug">
+        <GeneralOptions/>
+        <CompileOptions>
+          <Option>-isa=rxv1</Option>
+          <Option>-fpu</Option>
+          <Option>-include="${ProjDirPath}\generate"</Option>
+          <Option>-include="${ProjDirPath}\src"</Option>
+          <Option>-define=DEBUG_CONSOLE</Option>
+          <Option>-utf8</Option>
+          <Option>-nomessage</Option>
+          <Option>-debug</Option>
+          <Option>-outcode=utf8</Option>
+          <Option>-nologo</Option>
+          <Option>-lang=c</Option>
+          <Option>-lang=cpp</Option>
+          <Option>-output=obj=${CONFIGDIR}\${FILELEAF}.obj</Option>
+          <Option>-obj_path=${CONFIGDIR}</Option>
+        </CompileOptions>
+        <AssembleOptions>
+          <Option>-isa=rxv1</Option>
+          <Option>-fpu</Option>
+          <Option>-utf8</Option>
+          <Option>-debug</Option>
+          <Option>-nologo</Option>
+          <Option>-output=${CONFIGDIR}</Option>
+        </AssembleOptions>
+        <LinkOptions>
+          <Option>-output="${ProjName}.abs"</Option>
+          <Option>-form=absolute</Option>
+          <Option>-nomessage</Option>
+          <Option>-list=${ProjName}.map</Option>
+          <Option>-nooptimize</Option>
+          <Option>-rom=D=R,D_1=R_1,D_2=R_2</Option>
+          <Option>-cpu=RAM=00000000-00003fff,FIX=00080000-00083fff,FIX=00086000-00087fff,FIX=00088000-0009401f,FIX=000c0000-000fffff,ROM=00100000-00107fff,FIX=007fc000-007fc4ff,FIX=007ffc00-007fffff,ROM=fffc0000-ffffffff</Option>
+          <Option>-nologo</Option>
+          <Option>-start=SU,SI,B_1,R_1,B_2,R_2,B,R/04,PResetPRG,C_1,C_2,C,C$*,D*,W*,L,PIntPRG,P/0FFFC0000,FIXEDVECT/0FFFFFF80</Option>
+          <PreLinker>Auto</PreLinker>
+        </LinkOptions>
+        <LibraryGenerateOptions>
+          <Option>-isa=rxv1</Option>
+          <Option>-fpu</Option>
+          <Option>-lang=c</Option>
+          <Option>-head=runtime,math,stdio,stdlib,string,new</Option>
+          <Option>-output="${ProjName}.lib"</Option>
+          <Option>-nologo</Option>
+          <GenerateMode>BuildOptionChanged</GenerateMode>
+        </LibraryGenerateOptions>
+        <LinkOrder>
+          <Path>HardwareDebug\lowlvl.obj</Path>
+          <Path>HardwareDebug\dbsct.obj</Path>
+          <Path>HardwareDebug\hwsetup.obj</Path>
+          <Path>HardwareDebug\intprg.obj</Path>
+          <Path>HardwareDebug\lowsrc.obj</Path>
+          <Path>HardwareDebug\resetprg.obj</Path>
+          <Path>HardwareDebug\sbrk.obj</Path>
+          <Path>HardwareDebug\vecttbl.obj</Path>
+          <Path>HardwareDebug\bldc_test.obj</Path>
+          <Path>HardwareDebug\cmt.obj</Path>
+          <Path>HardwareDebug\mtu3.obj</Path>
+          <Path>HardwareDebug\port.obj</Path>
+          <Path>HardwareDebug\safeguard.obj</Path>
+          <Path>HardwareDebug\sns.obj</Path>
+          <Path>HardwareDebug\bldc_test.lib</Path>
+        </LinkOrder>
+        <NoTargetFile Target="matlab_dll\dllmain.cpp"/>
+        <NoTargetFile Target="matlab_dll\matlab_bldc.cpp"/>
+        <NoTargetFile Target="matlab_dll\matlab_dll.cpp"/>
+        <NoTargetFile Target="matlab_dll\pch.cpp"/>
+        <CommonOptions>
+          <IncludePathForC>"${ProjDirPath}\generate"</IncludePathForC>
+          <IncludePathForC>"${ProjDirPath}\src"</IncludePathForC>
+          <MacroForC>DEBUG_CONSOLE</MacroForC>
+        </CommonOptions>
+      </BuildMode>
+      <BuildMode Active="False" Name="Debug">
+        <GeneralOptions/>
+        <CompileOptions>
+          <Option>-isa=rxv1</Option>
+          <Option>-fpu</Option>
+          <Option>-include="${ProjDirPath}\generate"</Option>
+          <Option>-define=DEBUG_CONSOLE</Option>
+          <Option>-utf8</Option>
+          <Option>-nomessage</Option>
+          <Option>-debug</Option>
+          <Option>-outcode=utf8</Option>
+          <Option>-nologo</Option>
+          <Option>-lang=c</Option>
+          <Option>-lang=cpp</Option>
+          <Option>-output=obj=${CONFIGDIR}\${FILELEAF}.obj</Option>
+          <Option>-obj_path=${CONFIGDIR}</Option>
+        </CompileOptions>
+        <AssembleOptions>
+          <Option>-isa=rxv1</Option>
+          <Option>-fpu</Option>
+          <Option>-utf8</Option>
+          <Option>-debug</Option>
+          <Option>-nologo</Option>
+          <Option>-output=${CONFIGDIR}</Option>
+        </AssembleOptions>
+        <LinkOptions>
+          <Option>-output="${ProjName}.abs"</Option>
+          <Option>-form=absolute</Option>
+          <Option>-nomessage</Option>
+          <Option>-list=${ProjName}.map</Option>
+          <Option>-nooptimize</Option>
+          <Option>-rom=D=R,D_1=R_1,D_2=R_2</Option>
+          <Option>-cpu=RAM=00000000-00003fff,FIX=00080000-00083fff,FIX=00086000-00087fff,FIX=00088000-0009401f,FIX=000c0000-000fffff,ROM=00100000-00107fff,FIX=007fc000-007fc4ff,FIX=007ffc00-007fffff,ROM=fffc0000-ffffffff</Option>
+          <Option>-nologo</Option>
+          <Option>-start=SU,SI,B_1,R_1,B_2,R_2,B,R/04,PResetPRG,C_1,C_2,C,C$*,D*,W*,L,PIntPRG,P/0FFFC0000,FIXEDVECT/0FFFFFF80</Option>
+          <PreLinker>Auto</PreLinker>
+        </LinkOptions>
+        <LibraryGenerateOptions>
+          <Option>-isa=rxv1</Option>
+          <Option>-fpu</Option>
+          <Option>-lang=c</Option>
+          <Option>-head=runtime,stdio,stdlib,string,new</Option>
+          <Option>-output="${ProjName}.lib"</Option>
+          <Option>-nologo</Option>
+          <GenerateMode>BuildOptionChanged</GenerateMode>
+        </LibraryGenerateOptions>
+        <LinkOrder>
+          <Path>Debug\lowlvl.obj</Path>
+          <Path>Debug\dbsct.obj</Path>
+          <Path>Debug\hwsetup.obj</Path>
+          <Path>Debug\intprg.obj</Path>
+          <Path>Debug\lowsrc.obj</Path>
+          <Path>Debug\resetprg.obj</Path>
+          <Path>Debug\sbrk.obj</Path>
+          <Path>Debug\vecttbl.obj</Path>
+          <Path>Debug\bldc_test.obj</Path>
+          <Path>Debug\cmt.obj</Path>
+          <Path>Debug\mtu3.obj</Path>
+          <Path>Debug\port.obj</Path>
+          <Path>Debug\safeguard.obj</Path>
+          <Path>Debug\sns.obj</Path>
+          <Path>Debug\bldc_test.lib</Path>
+        </LinkOrder>
+        <NoTargetFile Target="matlab_dll\dllmain.cpp"/>
+        <NoTargetFile Target="matlab_dll\matlab_bldc.cpp"/>
+        <NoTargetFile Target="matlab_dll\matlab_dll.cpp"/>
+        <NoTargetFile Target="matlab_dll\pch.cpp"/>
+        <CommonOptions>
+          <IncludePathForC>"${ProjDirPath}\generate"</IncludePathForC>
+          <MacroForC>DEBUG_CONSOLE</MacroForC>
+        </CommonOptions>
+      </BuildMode>
+    </BuildOptions>
+  </Project>
+</MicomToolCommonProjectFile>
